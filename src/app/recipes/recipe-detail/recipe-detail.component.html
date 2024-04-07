@@ -1,6 +1,6 @@
 <section>
-    <img src="../../../assets/img/croissant.jpg" alt="">
-    <h1>Title</h1>
+    <img [src]="recipe.imagePath" alt="{{recipe.title}}">
+    <h1>{{ recipe.title}}</h1>
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
         <mat-icon>more_vert</mat-icon>
     </button>
@@ -19,7 +19,7 @@
         </button>
     </mat-menu>
     <div class="description">
-        Description
+        {{recipe.description}}
     </div>
     <div class="Ingrediens">
         Ingrediens

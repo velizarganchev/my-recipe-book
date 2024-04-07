@@ -1,8 +1,11 @@
 <div class="recipes-container">
     <div class="recipe-list-container">
-        <app-recipe-list></app-recipe-list>
+        <app-recipe-list (selectedRecipe)="showRecipe($event)"></app-recipe-list>
     </div>
     <div class="recipe-detail-container">
-        <app-recipe-detail></app-recipe-detail>
+        <app-recipe-detail *ngIf="recipeToShow; else infoText" [recipe]="recipeToShow"></app-recipe-detail>
+        <ng-template #infoText>
+            <p>Please select Recipe</p>
+        </ng-template>
     </div>
 </div>
