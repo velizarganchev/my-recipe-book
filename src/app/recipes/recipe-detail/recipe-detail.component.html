@@ -1,1 +1,27 @@
-<p>recipe-detail works!</p>
+<section>
+    <img src="../../../assets/img/croissant.jpg" alt="">
+    <h1>Title</h1>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>add</mat-icon>
+            <span>Add Ingredient to Shopping List</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>edit</mat-icon>
+            <span>Edit Recipe</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>delete</mat-icon>
+            <span>Delete Recipe</span>
+        </button>
+    </mat-menu>
+    <div class="description">
+        Description
+    </div>
+    <div class="Ingrediens">
+        Ingrediens
+    </div>
+</section>

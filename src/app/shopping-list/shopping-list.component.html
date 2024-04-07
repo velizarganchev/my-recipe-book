@@ -2,7 +2,11 @@
     <div class="shopping-list-edit-container">
         <app-shopping-edit></app-shopping-edit>
     </div>
-    <div class="shopping-list">
-        <p>Shopping List</p>
-    </div>
+    <hr>
+    <h2>Ingredients</h2>
+    <mat-list>
+        <mat-list-item *ngFor="let ingr of ingredients">
+            {{ingr.name}} ({{ingr.amount}})
+        </mat-list-item>
+    </mat-list>
 </section>

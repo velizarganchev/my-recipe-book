@@ -1,1 +1,11 @@
-<p>recipe-item works!</p>
+<section>
+    <a href="#">
+        <div class="section-left">
+            <h4>{{recipe.title}}</h4>
+            <p>{{recipe.description}}</p>
+        </div>
+        <div class="section-right">
+            <img [src]="recipe.imagePath" alt="">
+        </div>
+    </a>
+</section>

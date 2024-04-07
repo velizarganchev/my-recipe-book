@@ -1,0 +1,17 @@
+section {
+    padding: 18px;
+
+    >a {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .section-right {
+            width: 200px;
+
+            >img {
+                width: 100%;
+            }
+        }
+    }
+}

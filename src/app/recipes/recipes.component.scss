@@ -1,0 +1,11 @@
+.recipes-container {
+    display: flex;
+
+    .recipe-list-container {
+        width: 50%;
+    }
+
+    .recipe-detail-container {
+        width: 50%;
+    }
+}
