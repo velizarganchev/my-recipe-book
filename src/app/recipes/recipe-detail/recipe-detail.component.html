@@ -22,6 +22,10 @@
         {{recipe.description}}
     </div>
     <div class="Ingrediens">
-        Ingrediens
+        <ul>
+            <li *ngFor="let ingredient of recipe.ingredients">
+                {{ingredient.name}} - {{ingredient.amount}}
+            </li>
+        </ul>
     </div>
 </section>
