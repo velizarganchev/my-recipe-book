@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -23,6 +24,11 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { FooterComponent } from './shared/footer/footer.component';
 import { ShoppinListService } from './shopping-list/shoppin-list.service';
 
+
+const appRoutes: Routes = [
+  { path: '', component: RecipesComponent },
+  { path: 'shopping-list', component: ShoppingListComponent }
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +43,7 @@ import { ShoppinListService } from './shopping-list/shoppin-list.service';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(appRoutes),
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
