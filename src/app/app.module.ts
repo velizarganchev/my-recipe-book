@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -23,12 +24,14 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { ShoppinListService } from './shopping-list/shoppin-list.service';
+import { FormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
   { path: '', component: RecipesComponent },
   { path: 'shopping-list', component: ShoppingListComponent }
-]
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +46,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
+    FormsModule,
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
