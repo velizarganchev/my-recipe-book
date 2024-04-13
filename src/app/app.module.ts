@@ -25,6 +25,8 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { FooterComponent } from './shared/footer/footer.component';
 import { ShoppinListService } from './shopping-list/shoppin-list.service';
 import { FormsModule } from '@angular/forms';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 
 const appRoutes: Routes = [
@@ -42,7 +44,9 @@ const appRoutes: Routes = [
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    FooterComponent
+    FooterComponent,
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,10 @@
 
     .recipe-list-container {
         width: 50%;
+
+        >button {
+            margin-left: 20px;
+        }
     }
 
     .recipe-detail-container {

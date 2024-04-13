@@ -1,3 +1,5 @@
+@import '../../../../styles.scss';
+
 section {
     padding: 18px;
 
@@ -5,7 +7,14 @@ section {
         display: flex;
         justify-content: space-around;
         align-items: center;
+        padding: 10px;
+        text-decoration: none;
         cursor: pointer;
+
+        &:hover {
+            border-radius: 10px;
+            background-color: whitesmoke;
+        }
 
         .section-right {
             width: 200px;
@@ -15,4 +24,10 @@ section {
             }
         }
     }
+}
+
+.active {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 1px solid $hell_green;
 }

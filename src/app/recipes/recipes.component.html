@@ -1,12 +1,9 @@
 <div class="recipes-container">
     <div class="recipe-list-container">
-        
+        <button mat-button color="primary" routerLink="/recipes/new">Primary</button>
         <app-recipe-list></app-recipe-list>
     </div>
     <div class="recipe-detail-container">
-        <app-recipe-detail *ngIf="recipeToShow; else infoText" [recipe]="recipeToShow"></app-recipe-detail>
-        <ng-template #infoText>
-            <p>Please select Recipe</p>
-        </ng-template>
+        <router-outlet></router-outlet>
     </div>
 </div>
