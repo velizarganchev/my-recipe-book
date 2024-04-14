@@ -5,7 +5,7 @@
     <br>
     <h2>Ingredients</h2>
     <mat-list>
-        <mat-list-item *ngFor="let ingr of ingredients">
+        <mat-list-item *ngFor="let ingr of ingredients; let i = index" (click)="onEditItem(i)">
             {{ingr.name}} ({{ingr.amount}})
         </mat-list-item>
     </mat-list>

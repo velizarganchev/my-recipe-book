@@ -1,16 +1,16 @@
-<form class="form-container">
+<form class="form-container" (ngSubmit)="onAddItem(f)" #f="ngForm">
     <mat-form-field hintLabel="Max 18 characters">
         <mat-label>Name</mat-label>
-        <input matInput #name maxlength="18" placeholder="Ex. Nougat">
+        <input matInput #name name="name" ngModel maxlength="18" placeholder="Ex. Nougat" required>
         <mat-hint align="end">{{name.value.length}}/18</mat-hint>
     </mat-form-field>
     <mat-form-field class="form-number">
         <mat-label>Amout</mat-label>
-        <input matInput #amount type="number">
+        <input matInput #amount name="amount" ngModel type="number" required min="1">
     </mat-form-field>
     <div class="form-button-row">
-        <button mat-button color="primary" type="button" (click)="onAddItem()">Add</button>
-        <button mat-button color="warn" type="button">Delete</button>
-        <button mat-button color="accent" type="button">Clear</button>
+        <button mat-button color="primary" type="submit" [disabled]="!f.valid">{{editMode ? 'Update' : 'Add'}}</button>
+        <button mat-button color="accent" type="button" (click)="onClear()">Clear</button>
+        <button mat-button color="warn" type="button" (click)="onDelete()" *ngIf="editMode">Delete</button>
     </div>
 </form>

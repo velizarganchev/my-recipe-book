@@ -1,0 +1,12 @@
+section {
+
+    mat-list {
+        mat-list-item {
+            cursor: pointer;
+
+            &:hover{
+                background-color: whitesmoke;
+            }
+        }
+    }
+}
