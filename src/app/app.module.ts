@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
@@ -26,10 +26,9 @@ import { ShoppinListService } from './shopping-list/shoppin-list.service';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
-
 const appRoutes: Routes = [
   { path: '', component: RecipesComponent },
-  { path: 'shopping-list', component: ShoppingListComponent }
+  { path: 'shopping-list', component: ShoppingListComponent },
 ];
 
 @NgModule({
@@ -44,24 +43,22 @@ const appRoutes: Routes = [
     ShoppingEditComponent,
     FooterComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
     MatDividerModule,
     MatListModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
   ],
-  providers: [
-    provideAnimationsAsync(),
-    ShoppinListService
-  ],
-  bootstrap: [AppComponent]
+  providers: [provideAnimationsAsync(), ShoppinListService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

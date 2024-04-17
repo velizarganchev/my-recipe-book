@@ -1,1 +1,31 @@
-<p>recipe-edit works!</p>
+<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+    <div class="form-row-btn">
+        <button mat-flat-button color="primary" type="submit">Add<mat-icon matSuffix>add</mat-icon></button>
+        <button mat-flat-button color="accent">Clear<mat-icon matSuffix>clear</mat-icon></button>
+    </div>
+    <mat-form-field>
+        <mat-label>Favorite food</mat-label>
+        <input matInput type="text" id="title" formControlName="title">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Favorite food</mat-label>
+        <input matInput type="text" id="imagePath" formControlName="imagePath">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput id="description" formControlName="description"></textarea>
+    </mat-form-field>
+    <div class="ingredients-row" formArrayName="ingredients">
+        <div class="form-row" *ngFor="let ingr of controls; let i = index" [formGroupName]="i">
+            <mat-form-field>
+                <mat-label>Ingredient name</mat-label>
+                <input matInput type="text" formControlName="name">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Ingredient amount</mat-label>
+                <input matInput type="text" formControlName="amount">
+            </mat-form-field>
+            <button mat-flat-button color="warn">Delete<mat-icon matSuffix>delete</mat-icon></button>
+        </div>
+    </div>
+</form>

@@ -15,7 +15,7 @@ const appRoutes: Routes = [
             { path: '', component: RecipeStartComponent },
             { path: 'new', component: RecipeEditComponent }, //!!! bevor dinamic id - wichtig!!!
             { path: ':id', component: RecipeDetailComponent },
-            { path: ':id/edit', component: RecipeDetailComponent },
+            { path: ':id/edit', component: RecipeEditComponent },
         ]
     },
     { path: 'shopping-list', component: ShoppingListComponent }
