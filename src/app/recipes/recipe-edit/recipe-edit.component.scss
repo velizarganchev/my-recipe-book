@@ -3,13 +3,25 @@ form {
   padding: 20px 10px;
   display: flex;
   flex-direction: column;
-  .form-row-btn{
+
+  .form-row-btn {
     width: 200px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 15px;
   }
+
+  .image-preview-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    > img {
+      width: 100%;
+    }
+  }
+
   .form-row {
     display: flex;
     justify-content: space-between;

@@ -1,18 +1,23 @@
 <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
     <div class="form-row-btn">
-        <button mat-flat-button color="primary" type="submit">Add<mat-icon matSuffix>add</mat-icon></button>
-        <button mat-flat-button color="accent">Clear<mat-icon matSuffix>clear</mat-icon></button>
+        <button mat-flat-button color="primary" type="submit" [disabled]="!recipeForm.valid">Save<mat-icon
+                matSuffix>add</mat-icon></button>
+        <button mat-flat-button color="accent" type="button" (click)="onCancel()">Cancel<mat-icon
+                matSuffix>clear</mat-icon></button>
     </div>
     <mat-form-field>
-        <mat-label>Favorite food</mat-label>
+        <mat-label>Title</mat-label>
         <input matInput type="text" id="title" formControlName="title">
     </mat-form-field>
     <mat-form-field>
-        <mat-label>Favorite food</mat-label>
-        <input matInput type="text" id="imagePath" formControlName="imagePath">
+        <mat-label>Image URL</mat-label>
+        <input matInput type="text" id="imagePath" formControlName="imagePath" #imagePath>
     </mat-form-field>
+    <div class="image-preview-container">
+        <img [src]="imagePath.value" alt="Image">
+    </div>
     <mat-form-field>
-        <mat-label>Leave a comment</mat-label>
+        <mat-label>Description</mat-label>
         <textarea matInput id="description" formControlName="description"></textarea>
     </mat-form-field>
     <div class="ingredients-row" formArrayName="ingredients">
@@ -25,7 +30,12 @@
                 <mat-label>Ingredient amount</mat-label>
                 <input matInput type="text" formControlName="amount">
             </mat-form-field>
-            <button mat-flat-button color="warn">Delete<mat-icon matSuffix>delete</mat-icon></button>
+            <button mat-flat-button color="warn" type="button" (click)="onDeleteIngredient(i)">Delete<mat-icon
+                    matSuffix>delete</mat-icon></button>
         </div>
+    </div>
+    <div class="add-ingredient-btn-container">
+        <button mat-flat-button color="primary" type="button" (click)="onAddIngredient()">Add Ingredient<mat-icon
+                matSuffix>add</mat-icon></button>
     </div>
 </form>
