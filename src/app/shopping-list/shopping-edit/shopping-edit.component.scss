@@ -1,19 +1,23 @@
-.form-container {
-    mat-form-field {
-        margin-left: 8px;
-    }
+form {
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
-    .form-number{
-        width: 100px;
+  .inputs-container {
+    display: flex;
+    justify-content: space-around;
+    .form-number {
+      width: 100px;
     }
+  }
 
-    .form-button-row {
-        display: table-cell;
-        max-width: 600px;
-        padding-left: 10px;
+  .form-button-row {
+    display: flex;
+    justify-content: space-evenly;
 
-        .mat-mdc-button-base {
-            margin: 8px 8px 8px 0;
-        }
+    button {
+      padding: 10px 30px;
     }
+  }
 }

@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-shopping-edit',
   templateUrl: './shopping-edit.component.html',
-  styleUrl: './shopping-edit.component.scss'
+  styleUrl: './shopping-edit.component.scss',
 })
 export class ShoppingEditComponent implements OnInit, OnDestroy {
   @ViewChild('f', { static: true }) slForm;
@@ -17,7 +17,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   editMode: boolean;
   editedItem: Ingredient;
 
-  constructor(private slService: ShoppinListService) { }
+  constructor(private slService: ShoppinListService) {}
 
   ngOnInit(): void {
     this.subscription = this.slService.startedEditing.subscribe(
@@ -28,10 +28,10 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
 
         this.slForm.setValue({
           name: this.editedItem.name,
-          amount: this.editedItem.amount
+          amount: this.editedItem.amount,
         });
-
-      });
+      }
+    );
   }
 
   onAddItem(form: NgForm) {
@@ -44,13 +44,13 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
       this.slService.updateIngredient(this.editedItemIndex, ingredient);
     }
 
-    form.reset();
+    form.resetForm();
     this.editMode = false;
   }
 
   onClear() {
     this.slForm.reset();
-    this.editMode = false;  
+    this.editMode = false;
   }
 
   onDelete() {

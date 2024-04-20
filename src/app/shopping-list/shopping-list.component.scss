@@ -1,12 +1,35 @@
+@import "../../styles.scss";
+
 section {
+  color: $hell_green;
+  min-height: 500px;
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
 
+  .shopping-list-edit-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ingredients-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
     mat-list {
-        mat-list-item {
-            cursor: pointer;
+      display: flex;
+      flex-wrap: wrap;
 
-            &:hover{
-                background-color: whitesmoke;
-            }
+      mat-list-item {
+        cursor: pointer;
+        width: 200px;
+        &:hover {
+          background-color: whitesmoke;
         }
+      }
     }
+  }
 }

@@ -1,12 +1,14 @@
-<section class="shopping-list-container">
+<section>
     <div class="shopping-list-edit-container">
+        <h2>Add ingredient</h2>
         <app-shopping-edit></app-shopping-edit>
     </div>
-    <br>
-    <h2>Ingredients</h2>
-    <mat-list>
-        <mat-list-item *ngFor="let ingr of ingredients; let i = index" (click)="onEditItem(i)">
-            {{ingr.name}} ({{ingr.amount}})
-        </mat-list-item>
-    </mat-list>
+    <div class="ingredients-container">
+        <h2>Ingredients</h2>
+        <mat-list>
+            <mat-list-item *ngFor="let ingr of ingredients; let i = index" (click)="onEditItem(i)">
+                {{ingr.name}} ({{ingr.amount}})
+            </mat-list-item>
+        </mat-list>
+    </div>
 </section>
