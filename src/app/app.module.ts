@@ -25,6 +25,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { ShoppinListService } from './shopping-list/shoppin-list.service';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { RecipesService } from './recipes/recipes.service';
 
 const appRoutes: Routes = [
   { path: '', component: RecipesComponent },
@@ -58,7 +59,7 @@ const appRoutes: Routes = [
     MatInputModule,
     MatFormFieldModule,
   ],
-  providers: [provideAnimationsAsync(), ShoppinListService],
+  providers: [provideAnimationsAsync(), ShoppinListService, RecipesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
