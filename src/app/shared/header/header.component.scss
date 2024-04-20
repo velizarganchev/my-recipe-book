@@ -9,9 +9,12 @@ header {
     border-bottom: 1px solid gray;
     box-shadow: -2px 0px 6px 0px $blackColor;
 
-    >img {
-        width: 150px;
-        cursor: pointer;
+    >a {
+        text-decoration: none;
+        >img {
+            width: 150px;
+            cursor: pointer;
+        }
     }
 
     nav {
