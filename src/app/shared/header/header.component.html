@@ -5,5 +5,10 @@
     <nav>
         <a routerLink="/recipes" routerLinkActive="active">Recipes</a>
         <a routerLink="/shopping-list" routerLinkActive=" active">Shopping</a>
+        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item type="button" (click)="onSaveData()">Save Data</button>
+            <button mat-menu-item>Fetch Data</button>
+        </mat-menu>
     </nav>
 </header>

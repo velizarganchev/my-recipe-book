@@ -1,45 +1,51 @@
-@import '../../../styles.scss';
+@import "../../../styles.scss";
 
 header {
-    padding: 20px;
-    background-color: whitesmoke;
+  padding: 20px;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  box-shadow: -2px 0px 6px 0px $blackColor;
+
+  > a {
+    text-decoration: none;
+    > img {
+      width: 150px;
+      cursor: pointer;
+    }
+  }
+
+  nav {
+    width: 25%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    border-bottom: 1px solid gray;
-    box-shadow: -2px 0px 6px 0px $blackColor;
 
-    >a {
-        text-decoration: none;
-        >img {
-            width: 150px;
-            cursor: pointer;
-        }
+    > a {
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 400;
+      color: rgb(52, 50, 50);
+      border: 1px solid transparent;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        color: $hell_green;
+        border-bottom: 1px solid $hell_green;
+        transform: scale(1.1);
+      }
     }
 
-    nav {
-        width: 25%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-
-        >a {
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: 400;
-            color: rgb(52, 50, 50);
-            border: 1px solid transparent;
-            transition: transform 0.3s ease-in-out;
-
-            &:hover {
-                color: $hell_green;
-                border-bottom: 1px solid $hell_green;
-                transform: scale(1.1);
-            }
-        }
+    .mat-mdc-button:not(:disabled) {
+      color: rgb(52, 50, 50);
+      font-size: 20px;
+      font-weight: 400;
     }
+  }
 }
 
 .active {
-    border-bottom: 1px solid $hell_green !important;
+  border-bottom: 1px solid $hell_green !important;
 }

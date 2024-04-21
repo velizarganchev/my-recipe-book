@@ -1,10 +1,11 @@
 <section>
+    <h2>Shoppin List</h2>
     <div class="shopping-list-edit-container">
-        <h2>Add ingredient</h2>
+        <h3>Add ingredient</h3>
         <app-shopping-edit></app-shopping-edit>
     </div>
     <div class="ingredients-container">
-        <h2>Ingredients</h2>
+        <h3>Ingredients</h3>
         <mat-list>
             <mat-list-item *ngFor="let ingr of ingredients; let i = index" (click)="onEditItem(i)">
                 {{ingr.name}} ({{ingr.amount}})

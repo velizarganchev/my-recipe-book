@@ -2,23 +2,40 @@
 
 section {
   color: $hell_green;
-  min-height: 500px;
   padding: 22px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+
+  > h2 {
+    font-size: 45px;
+  }
 
   .shopping-list-edit-container {
-    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
+
+    > h3 {
+      font-size: 30px;
+      margin-bottom: 26px;
+    }
   }
 
   .ingredients-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    border-top: 1px solid $hell_green;
+
+    > h3 {
+      font-size: 30px;
+      margin: 26px 0;
+    }
+
     mat-list {
       display: flex;
       flex-wrap: wrap;
@@ -28,6 +45,10 @@ section {
         width: 200px;
         &:hover {
           background-color: whitesmoke;
+        }
+
+        > span > span {
+          color: $hell_green !important;
         }
       }
     }
