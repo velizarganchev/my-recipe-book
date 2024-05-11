@@ -8,7 +8,7 @@
         <button mat-button [matMenuTriggerFor]="menu">Menu</button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item type="button" (click)="onSaveData()">Save Data</button>
-            <button mat-menu-item>Fetch Data</button>
+            <button mat-menu-item (click)="onFetchData()">Fetch Data</button>
         </mat-menu>
     </nav>
 </header>

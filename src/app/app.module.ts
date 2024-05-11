@@ -13,6 +13,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -53,6 +54,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
@@ -64,4 +66,4 @@ const appRoutes: Routes = [
   providers: [provideAnimationsAsync(), ShoppinListService, RecipesService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

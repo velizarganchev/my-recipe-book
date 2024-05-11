@@ -9,13 +9,17 @@ import { DataStorageService } from '../../data-storage.service';
 export class HeaderComponent {
   @Output() featureSelected = new EventEmitter<string>();
 
-  constructor(private dataStorageService: DataStorageService) {}
-  
+  constructor(private dataStorageService: DataStorageService) { }
+
   onSelect(feature: string) {
     this.featureSelected.emit(feature);
   }
 
   onSaveData() {
     this.dataStorageService.storeRecipes();
+  }
+
+  onFetchData() {
+    this.dataStorageService.fetchRecipes().subscribe();
   }
 }

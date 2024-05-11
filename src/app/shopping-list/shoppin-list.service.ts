@@ -18,6 +18,7 @@ export class ShoppinListService {
     new Ingredient('Tomaten', 1),
   ];
 
+  
   getAllIngredients() {
     return this.ingredients.slice();
   }
