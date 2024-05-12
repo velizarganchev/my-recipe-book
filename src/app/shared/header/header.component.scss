@@ -9,9 +9,10 @@ header {
   border-bottom: 1px solid gray;
   box-shadow: -2px 0px 6px 0px $blackColor;
 
-  > a {
+  >a {
     text-decoration: none;
-    > img {
+
+    >img {
       width: 150px;
       cursor: pointer;
     }
@@ -23,7 +24,7 @@ header {
     justify-content: space-around;
     align-items: center;
 
-    > a {
+    >a {
       text-decoration: none;
       font-size: 20px;
       font-weight: 400;
@@ -32,8 +33,8 @@ header {
       transition: transform 0.3s ease-in-out;
 
       &:hover {
-        color: $hell_green;
-        border-bottom: 1px solid $hell_green;
+        color: $blue;
+        border-bottom: 1px solid $pink;
         transform: scale(1.1);
       }
     }
@@ -47,5 +48,5 @@ header {
 }
 
 .active {
-  border-bottom: 1px solid $hell_green !important;
+  border-bottom: 2px solid $pink !important;
 }

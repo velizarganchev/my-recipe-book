@@ -7,7 +7,7 @@ section {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        color: $hell_green;
+        color: $blue;
         padding: 10px;
         text-decoration: none;
         cursor: pointer;
@@ -44,5 +44,5 @@ section {
 .active {
     background-color: whitesmoke;
     border-radius: 10px;
-    border: 1px solid $hell_green;
+    border: 1px solid $blue;
 }

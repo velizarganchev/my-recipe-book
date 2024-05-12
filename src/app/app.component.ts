@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'koch-welt';
+  title = 'my-recipe-book';
 
 }

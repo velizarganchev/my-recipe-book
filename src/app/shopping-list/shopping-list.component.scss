@@ -1,7 +1,7 @@
 @import "../../styles.scss";
 
 section {
-  color: $hell_green;
+  color: $blue;
   padding: 22px;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 1px solid $hell_green;
+    border-top: 1px solid $blue;
 
     > h3 {
       font-size: 30px;
@@ -48,7 +48,7 @@ section {
         }
 
         > span > span {
-          color: $hell_green !important;
+          color: $blue !important;
         }
       }
     }
