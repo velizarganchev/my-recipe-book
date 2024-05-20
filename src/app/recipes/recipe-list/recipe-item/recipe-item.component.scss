@@ -7,14 +7,14 @@ section {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        color: $blue;
+        color: $blackColor;
         padding: 10px;
         text-decoration: none;
         cursor: pointer;
 
         &:hover {
+            border: 1px solid $blue;
             border-radius: 10px;
-            background-color: whitesmoke;
         }
 
         .section-left {
@@ -42,7 +42,6 @@ section {
 }
 
 .active {
-    background-color: whitesmoke;
     border-radius: 10px;
     border: 1px solid $blue;
 }

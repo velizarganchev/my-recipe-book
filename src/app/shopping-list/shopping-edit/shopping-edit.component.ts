@@ -3,6 +3,7 @@ import { Ingredient } from '../../shared/ingredient.model';
 import { ShoppinListService } from '../shoppin-list.service';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { DataStorageService } from '../../data-storage.service';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -17,7 +18,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   editMode: boolean;
   editedItem: Ingredient;
 
-  constructor(private slService: ShoppinListService) {}
+  constructor(private slService: ShoppinListService, private dataStorageService: DataStorageService) { }
 
   ngOnInit(): void {
     this.subscription = this.slService.startedEditing.subscribe(
@@ -55,6 +56,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
 
   onDelete() {
     this.slService.deleteIngredient(this.editedItemIndex);
+    this.dataStorageService.storeIngredients();
     this.onClear();
   }
 

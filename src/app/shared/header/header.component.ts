@@ -22,4 +22,8 @@ export class HeaderComponent {
   onFetchData() {
     this.dataStorageService.fetchRecipes().subscribe();
   }
+
+  onFetchShoppingList() {
+    this.dataStorageService.fetchShoppinList().subscribe();
+  }
 }

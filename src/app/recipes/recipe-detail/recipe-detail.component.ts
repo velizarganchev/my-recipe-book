@@ -3,6 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { Recipe } from '../recipe.model';
 import { RecipesService } from '../recipes.service';
+import { DataStorageService } from '../../data-storage.service';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -16,9 +17,10 @@ export class RecipeDetailComponent implements OnInit {
 
   constructor(
     private recipeService: RecipesService,
+    private dataStorageService: DataStorageService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
@@ -34,6 +36,7 @@ export class RecipeDetailComponent implements OnInit {
 
   onAddIngredients() {
     this.recipeService.addIngredientsToSl(this.recipe.ingredients);
+    this.dataStorageService.storeIngredients();
   }
 
   onDelete() {

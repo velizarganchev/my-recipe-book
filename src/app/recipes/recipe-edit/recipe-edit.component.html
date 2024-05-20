@@ -8,7 +8,7 @@
         <input matInput type="text" id="imagePath" formControlName="imagePath" #imagePath>
     </mat-form-field>
     <div class="image-preview-container">
-        <img [src]="imagePath.value" alt="Image">
+        <img [src]="imagePath.value ? imagePath.value : '../../../assets/img/food-default.png'" alt="Image">
     </div>
     <mat-form-field>
         <mat-label>Description</mat-label>
