@@ -1,0 +1,21 @@
+<section>
+    <h2>{{isLoginMode ? 'Login' : 'Sign up'}}</h2>
+    <div class="form-container">
+        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="text" id="email" ngModel name="email" required email>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" id="password" ngModel name="password" required minlength="6">
+            </mat-form-field>
+            <div class="add-ingredient-btn-container">
+                <button mat-flat-button color="primary" type="submit" [disabled]="!authForm.valid">{{isLoginMode ? 'Login' : 'Sign up'}}</button>
+                |
+                <button mat-flat-button color="primary" type="button" (click)="onSwitchMode()">Switch to {{isLoginMode ?
+                    'Sign up' : 'Login'}}</button>
+            </div>
+        </form>
+    </div>
+</section>

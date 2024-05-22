@@ -28,6 +28,7 @@ import { ShoppinListService } from './shopping-list/shoppin-list.service';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipesService } from './recipes/recipes.service';
+import { AuthComponent } from './auth/auth/auth.component';
 
 const appRoutes: Routes = [
   { path: '', component: RecipesComponent },
@@ -47,6 +48,7 @@ const appRoutes: Routes = [
     FooterComponent,
     RecipeStartComponent,
     RecipeEditComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,8 @@
     </a>
     <nav>
         <a routerLink="/recipes" routerLinkActive="active">Recipes</a>
-        <a routerLink="/shopping-list" routerLinkActive=" active" (click)="onFetchShoppingList()">Shopping</a>
+        <a routerLink="/auth" routerLinkActive="active">Login</a>
+        <a routerLink="/shopping-list" routerLinkActive="active" (click)="onFetchShoppingList()">Shopping</a>
         <button mat-button [matMenuTriggerFor]="menu">Menu</button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item type="button" (click)="onSaveData()">Save Data</button>
