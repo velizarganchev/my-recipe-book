@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { MatIconModule } from '@angular/material/icon';
@@ -32,6 +32,7 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipesService } from './recipes/recipes.service';
 import { AuthComponent } from './auth/auth/auth.component';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
 
 const appRoutes: Routes = [
   { path: '', component: RecipesComponent },
@@ -70,7 +71,12 @@ const appRoutes: Routes = [
     MatProgressSpinnerModule,
     MatCardModule
   ],
-  providers: [provideAnimationsAsync(), ShoppinListService, RecipesService],
+  providers: [
+    provideAnimationsAsync(),
+    ShoppinListService,
+    RecipesService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -5,7 +5,7 @@
     <nav>
         <a *ngIf="isAuthenticated" routerLink="/recipes" routerLinkActive="active">Recipes</a>
         <a *ngIf="!isAuthenticated" routerLink="/auth" routerLinkActive="active">Login</a>
-        <a *ngIf="isAuthenticated">Logout</a>
+        <a *ngIf="isAuthenticated" (click)="onLogOut()" >Logout</a>
         <a routerLink="/shopping-list" routerLinkActive="active"
             (click)="onFetchShoppingList()">Shopping List</a>
         <button *ngIf="isAuthenticated" mat-button [matMenuTriggerFor]="menu">Menu</button>
