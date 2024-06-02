@@ -13,6 +13,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -64,6 +67,8 @@ const appRoutes: Routes = [
     MatListModule,
     MatInputModule,
     MatFormFieldModule,
+    MatProgressSpinnerModule,
+    MatCardModule
   ],
   providers: [provideAnimationsAsync(), ShoppinListService, RecipesService],
   bootstrap: [AppComponent],
