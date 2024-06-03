@@ -1,15 +1,28 @@
 section {
-    padding: 18px;
+  padding: 40px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
 
-    .img-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img {
-            max-height: 500px;
-            border-radius: 10px;
-        }
+  .right-section {
+    .description {
+      min-width: 600px;
+      max-width: 600px;
     }
+  }
 
+  .left-section {
+    .action-btn-container {
+        display: flex;
+        justify-content: end;
+    }
+    .img-container {
+      width: 400px;
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
 }

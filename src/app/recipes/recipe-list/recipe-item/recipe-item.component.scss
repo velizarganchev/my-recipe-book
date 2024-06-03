@@ -1,47 +1,46 @@
-@import '../../../../styles.scss';
+@import "../../../../styles.scss";
 
 section {
-    padding: 18px;
+  padding: 18px;
+  width: 300px;
+  > a {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: $blackColor;
+    padding: 10px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
 
-    >a {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        color: $blackColor;
-        padding: 10px;
-        text-decoration: none;
-        cursor: pointer;
-
-        &:hover {
-            border: 1px solid $blue;
-            border-radius: 10px;
-        }
-
-        .section-left {
-            width: 50%;
-            word-wrap: break-word;
-
-            >h3 {
-                text-align: center;
-                width: 100%;
-                font-size: 22px;
-                font-weight: 500;
-            }
-        }
-
-        .section-right {
-            width: 200px;
-
-            >img {
-                width: 100%;
-                border-radius: 10px;
-
-            }
-        }
+    &:hover {
+      border: 1px solid $blue;
+      border-radius: 10px;
     }
+
+    .section-left {
+      word-wrap: break-word;
+
+      > h3 {
+        text-align: center;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+
+    .section-right {
+      width: 90px;
+      > img {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
 }
 
 .active {
-    border-radius: 10px;
-    border: 1px solid $blue;
+  border-radius: 10px;
+  border: 1px solid $blue;
 }
