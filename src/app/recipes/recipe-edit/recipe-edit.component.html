@@ -12,26 +12,29 @@
             <div class="image-preview-container">
                 <img [src]="imagePath.value ? imagePath.value : '../../../assets/img/food-default.png'" alt="Image">
             </div>
-            <mat-form-field>
-                <mat-label>Description</mat-label>
-                <textarea matInput id="description" formControlName="description" rows="2"></textarea>
-            </mat-form-field>
         </div>
         <div class="left-section">
-            <div class="ingredients-row" formArrayName="ingredients">
-                <div class="form-row" *ngFor="let ingr of controls; let i = index" [formGroupName]="i">
-                    <mat-form-field>
-                        <mat-label>Ingredient name</mat-label>
-                        <input matInput type="text" formControlName="name">
-                    </mat-form-field>
-                    <mat-form-field>
-                        <mat-label>Ingredient amount</mat-label>
-                        <input matInput type="number" min="1" formControlName="amount">
-                    </mat-form-field>
-                    <button mat-flat-button color="warn" type="button" (click)="onDeleteIngredient(i)">Delete<mat-icon
-                            matSuffix>delete</mat-icon></button>
-                </div>
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+                <textarea matInput id="description" formControlName="description" ></textarea>
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div class="ingredients-row" formArrayName="ingredients">
+        <div class="form-row" *ngFor="let ingr of controls; let i = index" [formGroupName]="i">
+            <div class="form-row-inputs">
+                <mat-form-field>
+                    <mat-label>Ingredient name</mat-label>
+                    <input matInput type="text" formControlName="name">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Ingredient amount</mat-label>
+                    <input matInput type="number" min="1" formControlName="amount">
+                </mat-form-field>
             </div>
+            <button mat-flat-button color="warn" type="button" (click)="onDeleteIngredient(i)">Delete<mat-icon
+                    matSuffix>delete</mat-icon></button>
         </div>
     </div>
     <!-- <div class="add-ingredient-btn-container">

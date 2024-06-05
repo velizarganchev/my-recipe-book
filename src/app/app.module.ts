@@ -15,6 +15,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTableModule } from '@angular/material/table';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -33,6 +35,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { RecipesService } from './recipes/recipes.service';
 import { AuthComponent } from './auth/auth/auth.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { ShoppingListTableComponent } from './shopping-list/shopping-list-table/shopping-list-table.component';
 
 const appRoutes: Routes = [
   { path: '', component: RecipesComponent },
@@ -53,6 +56,7 @@ const appRoutes: Routes = [
     RecipeStartComponent,
     RecipeEditComponent,
     AuthComponent,
+    ShoppingListTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,14 +73,20 @@ const appRoutes: Routes = [
     MatInputModule,
     MatFormFieldModule,
     MatProgressSpinnerModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
+    MatCheckboxModule,
   ],
   providers: [
     provideAnimationsAsync(),
     ShoppinListService,
     RecipesService,
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

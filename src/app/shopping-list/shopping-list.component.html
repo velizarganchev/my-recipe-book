@@ -6,10 +6,11 @@
     </div>
     <div class="ingredients-container">
         <h3>Ingredients</h3>
-        <mat-list>
+        <!-- <mat-list>
             <mat-list-item *ngFor="let ingr of ingredients; let i = index" (click)="onEditItem(i)">
                 {{ingr.name}} ({{ingr.amount}})
             </mat-list-item>
-        </mat-list>
+        </mat-list> -->
+        <app-shopping-list-table />
     </div>
 </section>
