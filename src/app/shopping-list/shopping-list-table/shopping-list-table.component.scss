@@ -1,3 +1,19 @@
 table {
   width: 100% !important;
 }
+
+tr {
+  cursor: pointer;
+
+  &:hover {
+    background-color: whitesmoke;
+  }
+}
+
+.mat-mdc-header-row {
+
+  &:hover {
+    cursor: unset;
+    background-color: unset;
+  }
+}

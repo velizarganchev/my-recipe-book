@@ -11,6 +11,6 @@
                 {{ingr.name}} ({{ingr.amount}})
             </mat-list-item>
         </mat-list> -->
-        <app-shopping-list-table />
+        <app-shopping-list-table *ngIf="ingredients.length > 0" [ingredients]="ingredients" />
     </div>
 </section>

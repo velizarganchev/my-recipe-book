@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppinListService } from './shoppin-list.service';
 import { Subscription } from 'rxjs';
+import { DataStorageService } from '../data-storage.service';
 
 @Component({
   selector: 'app-shopping-list',
@@ -9,13 +10,15 @@ import { Subscription } from 'rxjs';
   styleUrl: './shopping-list.component.scss'
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
-  ingredients: Ingredient[];
+  ingredients: Ingredient[] = [];
   private subscription: Subscription;
 
-  constructor(private shoppinListService: ShoppinListService) { }
+  constructor(
+    private shoppinListService: ShoppinListService,
+    private dataStorageService: DataStorageService) { }
 
   ngOnInit(): void {
-    this.ingredients = this.shoppinListService.getAllIngredients();
+    this.dataStorageService.fetchShoppinList().subscribe();
 
     this.subscription = this.shoppinListService.ingredientsChanged.subscribe(
       (ingredients: Ingredient[]) => {

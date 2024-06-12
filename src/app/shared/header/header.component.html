@@ -1,17 +1,17 @@
 <header>
     <a routerLink="/recipes">
-        <img src="../../../assets/img/logo.png" alt="Logo">
+        <img src="../../../assets/img/logo-mrb.png" alt="Logo">
     </a>
     <nav>
         <a *ngIf="isAuthenticated" routerLink="/recipes" routerLinkActive="active">Recipes</a>
         <a *ngIf="!isAuthenticated" routerLink="/auth" routerLinkActive="active">Login</a>
-        <a *ngIf="isAuthenticated" (click)="onLogOut()" >Logout</a>
-        <a routerLink="/shopping-list" routerLinkActive="active"
+        <a *ngIf="isAuthenticated" (click)="onLogOut()">Logout</a>
+        <a *ngIf="isAuthenticated" routerLink="/shopping-list" routerLinkActive="active"
             (click)="onFetchShoppingList()">Shopping List</a>
-        <button *ngIf="isAuthenticated" mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <!-- <button *ngIf="isAuthenticated" mat-button [matMenuTriggerFor]="menu">Menu</button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item type="button" (click)="onSaveData()">Save Data</button>
             <button mat-menu-item (click)="onFetchData()">Fetch Data</button>
-        </mat-menu>
+        </mat-menu> -->
     </nav>
 </header>
