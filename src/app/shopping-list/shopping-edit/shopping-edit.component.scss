@@ -1,12 +1,13 @@
 form {
-  width: 550px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
 
   .inputs-container {
     display: flex;
     justify-content: space-around;
+    gap: 22px;
+
     .form-number {
       width: 100px;
     }
