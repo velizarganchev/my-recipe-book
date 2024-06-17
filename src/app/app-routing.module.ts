@@ -17,19 +17,18 @@ const appRoutes: Routes = [
     component: RecipesComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: '', component: RecipeStartComponent },
       { path: 'new', component: RecipeEditComponent }, //!!! bevor dinamic id - wichtig!!!
-      {
-        path: ':id',
-        component: RecipeDetailComponent,
-        resolve: [RecipesResolverService],
-      },
       {
         path: ':id/edit',
         component: RecipeEditComponent,
         resolve: [RecipesResolverService],
       },
     ],
+  },
+  {
+    path: 'recipes/:id',
+    component: RecipeDetailComponent,
+    resolve: [RecipesResolverService],
   },
   { path: 'shopping-list', component: ShoppingListComponent },
   { path: 'auth', component: AuthComponent },
@@ -38,4 +37,4 @@ const appRoutes: Routes = [
   imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

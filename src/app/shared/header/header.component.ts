@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   @Output() featureSelected = new EventEmitter<string>();
   isAuthenticated = false;
   private userSub: Subscription;
+  showNavigation = false;
 
   constructor(
     private dataStorageService: DataStorageService,
@@ -48,6 +49,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   onLogOut() {
     this.authService.logOut();
+  }
+
+  onShowNav() {
+    this.showNavigation = !this.showNavigation;
   }
 
   ngOnDestroy(): void {

@@ -2,7 +2,7 @@
     <a routerLink="/recipes">
         <img src="../../../assets/img/logo-mrb.png" alt="Logo">
     </a>
-    <nav>
+    <nav class="nav">
         <a *ngIf="isAuthenticated" routerLink="/recipes" routerLinkActive="active">Recipes</a>
         <a *ngIf="!isAuthenticated" routerLink="/auth" routerLinkActive="active">Login</a>
         <a *ngIf="isAuthenticated" (click)="onLogOut()">Logout</a>
@@ -13,5 +13,23 @@
             <button mat-menu-item type="button" (click)="onSaveData()">Save Data</button>
             <button mat-menu-item (click)="onFetchData()">Fetch Data</button>
         </mat-menu> -->
+    </nav>
+    <button class="responsiv-btn" type="button" (click)="onShowNav()" mat-icon-button color="accent">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <nav class="mobile-nav-backdrop" (click)="onShowNav()" *ngIf="showNavigation">
+        <div class="mobile-nav">
+            <button class="close-btn" type="button" (click)="onShowNav()" mat-icon-button color="accent">
+                <mat-icon>close</mat-icon>
+            </button>
+            <div class="mobile-nav-links">
+                <a *ngIf="isAuthenticated" routerLink="/recipes" routerLinkActive="active">Recipes</a>
+                <a *ngIf="!isAuthenticated" routerLink="/auth" routerLinkActive="active">Login</a>
+                <a *ngIf="isAuthenticated" (click)="onLogOut()">Logout</a>
+                <a *ngIf="isAuthenticated" routerLink="/shopping-list" routerLinkActive="active"
+                    (click)="onFetchShoppingList()">Shopping List</a>
+            </div>
+        </div>
+
     </nav>
 </header>

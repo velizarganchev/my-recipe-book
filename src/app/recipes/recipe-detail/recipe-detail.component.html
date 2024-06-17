@@ -1,22 +1,11 @@
-<section>
-    <div class="right-section">
+<!-- <section>
+    <div class="title-container">
         <h1>{{ recipe.title}}</h1>
-        <div class="description">
-            {{recipe.description}}
-        </div>
-        <div class="Ingrediens">
-            <ul>
-                <li *ngFor="let ingredient of recipe.ingredients">
-                    {{ingredient.name}} - {{ingredient.amount}}
-                </li>
-            </ul>
-        </div>
     </div>
-
-    <div class="left-section">
+    <div class="right-section">
         <div class="action-btn-container">
             <button mat-icon-button [matMenuTriggerFor]="menu">
-                <mat-icon>more_vert</mat-icon>
+                <mat-icon>more_horiz</mat-icon>
             </button>
         </div>
         <mat-menu #menu="matMenu">
@@ -36,6 +25,64 @@
         <div class="img-container">
             <img [src]="recipe.imagePath" alt="{{recipe.title}}">
         </div>
-
     </div>
-</section>
+
+    <div class="left-section">
+        <div class="description">
+            {{recipe.description}}
+        </div>
+        <div class="Ingrediens">
+            <ul>
+                <li *ngFor="let ingredient of recipe.ingredients">
+                    {{ingredient.name}} - {{ingredient.amount}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</section> -->
+<div class="recipe-container">
+    <mat-card class="recipe">
+        <mat-card-header>
+            <div class="header-container">
+                <div class="title-container">
+                    <mat-card-title>{{recipe.title}}</mat-card-title>
+                    <mat-card-subtitle>{{recipe.category}}</mat-card-subtitle>
+                </div>
+                <div class="action-btn-container">
+                    <button mat-icon-button [matMenuTriggerFor]="menu">
+                        <mat-icon>more_horiz</mat-icon>
+                    </button>
+                </div>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="onAddIngredients()">
+                        <mat-icon>add</mat-icon>
+                        <span>Add Ingredient to Shopping List</span>
+                    </button>
+                    <button mat-menu-item (click)="onEditRecipe()">
+                        <mat-icon>edit</mat-icon>
+                        <span>Edit Recipe</span>
+                    </button>
+                    <button mat-menu-item type="button" (click)="onDelete()">
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete Recipe</span>
+                    </button>
+                </mat-menu>
+            </div>
+        </mat-card-header>
+
+        <div class="img-container">
+            <div class="image">
+                <img [src]="recipe.imagePath" alt="{{recipe.title}}">
+            </div>
+        </div>
+        <mat-card-content>
+            <p>
+                {{recipe.description}}
+            </p>
+        </mat-card-content>
+        <mat-card-content class="ingredients-title">Ingredients</mat-card-content>
+        <mat-card-actions>
+            <app-recipes-ingredients-chips [ingredients]="recipe.ingredients" />
+        </mat-card-actions>
+    </mat-card>
+</div>

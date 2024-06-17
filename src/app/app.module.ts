@@ -17,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatChipsModule} from '@angular/material/chips';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -36,6 +37,7 @@ import { RecipesService } from './recipes/recipes.service';
 import { AuthComponent } from './auth/auth/auth.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { ShoppingListTableComponent } from './shopping-list/shopping-list-table/shopping-list-table.component';
+import { RecipesIngredientsChipsComponent } from './recipes/recipes-ingredients-chips/recipes-ingredients-chips.component';
 
 const appRoutes: Routes = [
   { path: '', component: RecipesComponent },
@@ -57,6 +59,7 @@ const appRoutes: Routes = [
     RecipeEditComponent,
     AuthComponent,
     ShoppingListTableComponent,
+    RecipesIngredientsChipsComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +79,7 @@ const appRoutes: Routes = [
     MatCardModule,
     MatTableModule,
     MatCheckboxModule,
+    MatChipsModule
   ],
   providers: [
     provideAnimationsAsync(),
