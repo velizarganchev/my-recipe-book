@@ -16,18 +16,16 @@ const appRoutes: Routes = [
     path: 'recipes',
     component: RecipesComponent,
     canActivate: [AuthGuard],
-    children: [
-      { path: 'new', component: RecipeEditComponent }, //!!! bevor dinamic id - wichtig!!!
-      {
-        path: ':id/edit',
-        component: RecipeEditComponent,
-        resolve: [RecipesResolverService],
-      },
-    ],
   },
+  { path: 'recipes/new', component: RecipeEditComponent },
   {
     path: 'recipes/:id',
     component: RecipeDetailComponent,
+    resolve: [RecipesResolverService],
+  },
+  {
+    path: 'recipes/:id/edit',
+    component: RecipeEditComponent,
     resolve: [RecipesResolverService],
   },
   { path: 'shopping-list', component: ShoppingListComponent },

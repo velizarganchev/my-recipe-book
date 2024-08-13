@@ -9,10 +9,10 @@ import { Subject } from 'rxjs';
 })
 export class RecipesService {
   recipesChanged = new Subject<Recipe[]>();
+  private recipes: Recipe[] = [];
 
   constructor(private slService: ShoppinListService) { }
 
-  private recipes: Recipe[] = [];
 
   setRecipes(recipes: Recipe[]) {
     this.recipes = recipes;

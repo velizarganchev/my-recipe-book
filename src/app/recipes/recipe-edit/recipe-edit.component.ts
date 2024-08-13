@@ -13,6 +13,7 @@ import { DataStorageService } from '../../data-storage.service';
 export class RecipeEditComponent implements OnInit {
   id: number;
   editMode = false;
+  mainTitle;
   recipeForm: FormGroup;
 
   constructor(
@@ -28,6 +29,11 @@ export class RecipeEditComponent implements OnInit {
       this.editMode = params['id'] != null;
       this.initForm();
     });
+    if (this.editMode) {
+      this.mainTitle = 'Edit Recipe';
+    } else {
+      this.mainTitle = 'Add Recipe';
+    }
   }
 
   onSubmit() {
